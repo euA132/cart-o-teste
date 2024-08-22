@@ -3,45 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cartão de Crédito</title>
+    <title>Loja Online</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .product, .checkout-form {
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 28px;
+            color: #28a745;
+            margin: 10px 0;
+        }
+        .checkout-btn, .submit-btn {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+        .checkout-btn:hover, .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .checkout-btn:active, .submit-btn:active {
+            background-color: #004494;
+            transform: scale(0.98);
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input:focus {
+            border-color: #80bdff;
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+        section {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #495057;
+        }
+    </style>
 </head>
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #e9ecef 0%, #f4f4f9 100%); margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; margin: 20px; box-sizing: border-box;">
-        <h1 style="text-align: center; color: #343a40; margin-bottom: 30px;">Finalizar Compra</h1>
-        <form style="display: flex; flex-direction: column;">
-            <section style="margin-bottom: 25px;">
-                <h2 style="color: #495057; margin-bottom: 15px; font-size: 18px;">Informações do Cartão</h2>
-                <label for="card-name" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Nome no Cartão</label>
-                <input type="text" id="card-name" name="card-name" placeholder="Nome como no cartão" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+<body>
+    <div class="container">
+        <!-- Página de Produtos -->
+        <div id="products-section" class="section active">
+            <h1>Loja Online</h1>
+            <div class="product">
+                <h2>Produto A</h2>
+                <p class="price">€11</p>
+                <button class="checkout-btn" onclick="showCheckout()">Finalizar Compra</button>
+            </div>
+        </div>
+        
+        <!-- Página de Finalização de Compra -->
+        <div id="checkout-section" class="section">
+            <h1>Finalizar Compra</h1>
+            <form id="checkout-form" class="checkout-form">
+                <section class="card-info">
+                    <h2>Informações do Cartão</h2>
+                    <label for="card-name">Nome no Cartão</label>
+                    <input type="text" id="card-name" name="card-name" placeholder="Nome como no cartão" required>
 
-                <label for="card-number" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Número do Cartão</label>
-                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+                    <label for="card-number">Número do Cartão</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
 
-                <label for="card-expiry" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Data de Validade</label>
-                <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+                    <label for="card-expiry">Data de Validade</label>
+                    <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA" required>
 
-                <label for="card-cvc" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Código de Segurança</label>
-                <input type="text" id="card-cvc" name="card-cvc" placeholder="123" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
-            </section>
+                    <label for="card-cvc">Código de Segurança</label>
+                    <input type="text" id="card-cvc" name="card-cvc" placeholder="123" required>
+                </section>
 
-            <section style="margin-bottom: 25px;">
-                <h2 style="color: #495057; margin-bottom: 15px; font-size: 18px;">Endereço de Envio</h2>
-                <label for="address" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Rua</label>
-                <input type="text" id="address" name="address" placeholder="Rua Exemplo, 123" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+                <section class="shipping-info">
+                    <h2>Endereço de Envio</h2>
+                    <label for="address">Rua</label>
+                    <input type="text" id="address" name="address" placeholder="Rua Exemplo, 123" required>
 
-                <label for="city" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Cidade</label>
-                <input type="text" id="city" name="city" placeholder="Cidade" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+                    <label for="city">Cidade</label>
+                    <input type="text" id="city" name="city" placeholder="Cidade" required>
 
-                <label for="state" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Estado</label>
-                <input type="text" id="state" name="state" placeholder="Estado" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+                    <label for="state">Estado</label>
+                    <input type="text" id="state" name="state" placeholder="Estado" required>
 
-                <label for="zip" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">CEP</label>
-                <input type="text" id="zip" name="zip" placeholder="00000-000" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
-            </section>
+                    <label for="zip">CEP</label>
+                    <input type="text" id="zip" name="zip" placeholder="00000-000" required>
+                </section>
 
-            <button type="submit" style="background-color: #28a745; color: #ffffff; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; transition: background-color 0.3s ease, transform 0.2s ease;">Finalizar Compra</button>
-        </form>
+                <button type="submit" class="submit-btn">Finalizar Compra</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+        function showCheckout() {
+            document.getElementById('products-section').classList.remove('active');
+            document.getElementById('checkout-section').classList.add('active');
+        }
+    </script>
 </body>
 </html>
-
