@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cartão de Crédito</title>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #e9ecef 0%, #f4f4f9 100%); margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; margin: 20px; box-sizing: border-box;">
+        <h1 style="text-align: center; color: #343a40; margin-bottom: 30px;">Finalizar Compra</h1>
+        <form style="display: flex; flex-direction: column;">
+            <section style="margin-bottom: 25px;">
+                <h2 style="color: #495057; margin-bottom: 15px; font-size: 18px;">Informações do Cartão</h2>
+                <label for="card-name" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Nome no Cartão</label>
+                <input type="text" id="card-name" name="card-name" placeholder="Nome como no cartão" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+
+                <label for="card-number" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Número do Cartão</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+
+                <label for="card-expiry" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Data de Validade</label>
+                <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+
+                <label for="card-cvc" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Código de Segurança</label>
+                <input type="text" id="card-cvc" name="card-cvc" placeholder="123" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+            </section>
+
+            <section style="margin-bottom: 25px;">
+                <h2 style="color: #495057; margin-bottom: 15px; font-size: 18px;">Endereço de Envio</h2>
+                <label for="address" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Rua</label>
+                <input type="text" id="address" name="address" placeholder="Rua Exemplo, 123" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+
+                <label for="city" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Cidade</label>
+                <input type="text" id="city" name="city" placeholder="Cidade" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+
+                <label for="state" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">Estado</label>
+                <input type="text" id="state" name="state" placeholder="Estado" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+
+                <label for="zip" style="font-weight: bold; margin-bottom: 8px; display: block; color: #495057;">CEP</label>
+                <input type="text" id="zip" name="zip" placeholder="00000-000" required style="width: 100%; padding: 14px; border: 1px solid #ced4da; border-radius: 8px; margin-bottom: 12px; box-sizing: border-box; font-size: 16px;">
+            </section>
+
+            <button type="submit" style="background-color: #28a745; color: #ffffff; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; transition: background-color 0.3s ease, transform 0.2s ease;">Finalizar Compra</button>
+        </form>
+    </div>
+</body>
+</html>
+
